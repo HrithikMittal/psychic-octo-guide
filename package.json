@@ -4,7 +4,7 @@
   "description": "a ci-cd project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   "homepage": "https://github.com/HrithikMittal/psychic-octo-guide#readme",
   "dependencies": {
     "axios": "^0.21.1",
-    "express": "^4.17.1",
-    "logger": "^0.0.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
   }
 }
