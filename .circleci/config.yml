@@ -1,10 +1,8 @@
 jobs:
   build:
     docker:
-      - image: circleci/<language>:<version TAG>
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+      - image: circleci/node@4.0.0
+
     working_directory: # here we can mention the branch
     steps:
       - checkout
