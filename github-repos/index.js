@@ -3,15 +3,15 @@ const express = require("express");
 
 const app = express();
 
-app.get("/", (req, res) => {
+app.get("/github-repos", (req, res) => {
   res.send({
-    message: "Hello World, Are we enemy!",
+    message: "Total Github repos are going to expose soon!",
   });
 });
 
-app.get("/hello-world", (req, res) => {
+app.get("/github-repos/:repo/repos", (req, res) => {
   res.send({
-    message: "Successfully ! Cleared 1st step and a lot more are there!",
+    message: "Total Github repos of this repo is going to expose soon!",
   });
 });
 
