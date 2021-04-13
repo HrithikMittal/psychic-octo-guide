@@ -1,0 +1,49 @@
+jobs:
+  build:
+    docker:
+      - image: circleci/<language>:<version TAG>
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    working_directory: # here we can mention the branch
+    steps:
+      - checkout
+      - run: <command>
+  test1:
+    docker:
+      - image: circleci/<language>:<version TAG>
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    working_directory: # here we can mention the branch
+    steps:
+      - checkout
+      - run: <command>
+  test2:
+    docker:
+      - image: circleci/<language>:<version TAG>
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    working_directory: # here we can mention the branch
+    steps:
+      - checkout
+      - run: <command>
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test1
+      - test2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: # we can name a particular branch here.
+  
